@@ -5,11 +5,11 @@ function MockScore() {
  const{selectedMock} = useContext(store)
   return (
     <div className=' w-1/2 px-2'>
-        <div className=" h-[60px] hover:bg-[#f0f0f0] flex justify-between cursor-pointer items-center px-2 rounded-md pr-[20px]">
+        <div className=" h-[60px]  flex justify-between cursor-pointer items-center px-2 rounded-md pr-[20px]">
              <div className=" flex items-center gap-2">
              <div className="avatar">
                <div className="w-12 mask mask-squircle">
-                 <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                 <img src={selectedMock?.avatar} />
                </div>
              </div>
              <div>

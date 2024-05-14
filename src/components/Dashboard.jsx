@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import MockScore from "./MockScore";
 import { store } from "../store/store";
 function Dashboard() {
-  const{mockData} = useContext(store)
+  const{mockData, selectedMock} = useContext(store)
 
   return (
     <div className=" w-full h-full p-3 flex flex-col">
@@ -74,7 +74,7 @@ function Dashboard() {
 
         <div className=" flex-1 rounded-lg border p-3 lg:h-full shadow-md flex">
           <MockScore />
-          <div className=" w-1/2 slider rounded-lg relative">
+          <div className=" w-1/2 slider rounded-lg relative" style={{backgroundImage:`url(${selectedMock.avatar})`}}>
             <div className="carousel w-full h-full">
              
               <div id="slide1" className="carousel-item relative h-full w-full">
@@ -158,7 +158,7 @@ function Dashboard() {
 export default Dashboard;
 
 const MockUser = ({ user }) => {
-  const{setSelectedMock} = useContext(store)
+  const{setSelectedMock, selectedMock} = useContext(store)
 
   const handleSelect = ()=>{
     setSelectedMock(user)
@@ -166,11 +166,11 @@ const MockUser = ({ user }) => {
 
   return (
     <>
-      <div className=" h-[50px] hover:bg-[#f0f0f0] flex justify-between cursor-pointer items-center px-2 rounded-md pr-[20px]"  onClick={handleSelect}>
+      <div className={`h-[50px] mb-1 hover:bg-[#f0f0f0] flex justify-between cursor-pointer items-center px-2 rounded-md pr-[20px] ${selectedMock.id === user.id ? 'bg-[#f0f0f0]': ''}`}  onClick={handleSelect}>
         <div className=" flex items-center gap-2">
           <div className="avatar">
             <div className="w-10 mask mask-squircle">
-              <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              <img src={user.avatar}/>
             </div>
           </div>
           <div>
@@ -191,37 +191,4 @@ const MockUser = ({ user }) => {
     </>
   );
 };
-//<div className="w-full h-full carousel rounded-box">
-// <div id="item1" className="carousel-item w-full text-[17px] text-white font-semibold flex items-end justify-center pb-12">
-// Que.1 : Tell me about yourself?
-// </div>
-// <div id="item2" className="carousel-item w-full text-[17px] text-white font-semibold flex items-end justify-center pb-12">
-// Que.2 : Tell me about yourself?
-// </div>
-// <div id="item3" className="carousel-item w-full text-[17px] text-white font-semibold flex items-end justify-center pb-12">
-// Que.3 : Tell me about yourself?
-// </div>
-// <div id="item4" className="carousel-item w-full text-[17px] text-white font-semibold flex items-end justify-center pb-12">
-// Que.4 : Tell me about yourself?
-// </div>
-// <div id="item5" className="carousel-item w-full text-[17px] text-white font-semibold flex items-end justify-center pb-12">
-// Que.5 : Tell me about yourself?
-// </div>
-// <div id="item6" className="carousel-item w-full text-[17px] text-white font-semibold flex items-end justify-center pb-12">
-// Que.6 : Tell me about yourself?
-// </div>
-// </div>
-// <div className="  absolute bottom-2 flex justify-center w-full py-2 gap-2">
-// <a href="#item1" className="btn btn-xs">
-// 1
-// </a>
-// <a href="#item2" className="btn btn-xs">
-// 2
-// </a>
-// <a href="#item3" className="btn btn-xs">
-// 3
-// </a>
-// <a href="#item4" className="btn btn-xs">
-// 4
-// </a>
-// </div>
+

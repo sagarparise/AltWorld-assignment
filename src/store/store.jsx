@@ -12,6 +12,7 @@ const StoreProvider = ({children})=>{
     behaviour: 7,
     communication: 9,
     situationHandling: 8,
+    avatar: 'https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'
   }
  )
 
@@ -24,6 +25,8 @@ const StoreProvider = ({children})=>{
       behaviour: 7,
       communication: 9,
       situationHandling: 8,
+      avatar: 'https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'
+
     },
     {
       id: 2,
@@ -33,6 +36,7 @@ const StoreProvider = ({children})=>{
       behaviour: 8,
       communication: 6,
       situationHandling: 7,
+      avatar:'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/933.jpg'
     },
     {
       id: 3,
@@ -42,6 +46,8 @@ const StoreProvider = ({children})=>{
       behaviour: 6,
       communication: 7,
       situationHandling: 5,
+      avatar:'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/662.jpg'
+
     },
     {
       id: 4,
@@ -51,6 +57,7 @@ const StoreProvider = ({children})=>{
       behaviour: 9,
       communication: 8,
       situationHandling: 6,
+      avatar: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1213.jpg'
     },
     {
       id: 5,
@@ -60,6 +67,7 @@ const StoreProvider = ({children})=>{
       behaviour: 7,
       communication: 9,
       situationHandling: 8,
+      avatar: "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/651.jpg"
     },
   ];
 
